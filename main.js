@@ -64,7 +64,7 @@
   const productDienThoai = document.getElementById("product-dienthoai");
 
   if (productHot) {
-    fetch("http://localhost:3000/products")
+    fetch(`https://my-json-server.typicode.com/vinhle15890-max/backend/products`)
       .then((response) => response.json())
       .then((data) => {
         const dataHot = data.filter((p) => p.hot === true);
@@ -87,7 +87,7 @@
   let filteredProducts = [];
 
   if (productAll) {
-    fetch('http://localhost:3000/products')
+    fetch(`https://my-json-server.typicode.com/vinhle15890-max/backend/products`)
       .then(response => response.json())
       .then(data => {
         allProductsData = data;
@@ -143,7 +143,7 @@
   if (productDetailDiv) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
-    fetch(`http://localhost:3000/products/${id}`)
+    fetch(`https://my-json-server.typicode.com/vinhle15890-max/backend/products/${id}`)
       .then(response => response.json())
       .then(item => {
         const product = new Product(
@@ -300,7 +300,7 @@
   document.addEventListener("click", function (e) {
     if (e.target && e.target.id === "addCartBtn") {
       const productId = e.target.getAttribute("productId");
-      fetch(`http://localhost:3000/products/${productId}`)
+      fetch(`https://my-json-server.typicode.com/vinhle15890-max/backend/products/${productId}`)
         .then((response) => response.json())
         .then((item) => {
           const product = new Product(
